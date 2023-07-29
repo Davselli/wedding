@@ -4841,7 +4841,7 @@ wpo-hero-slider-s3
   z-index: 1;
   background: url(../images/cta.jpg) no-repeat center center;
   height: 400px;
-  background-attachment: initial;
+  background-attachment: fixed;
 }
 .wpo-video-section:before {
   position: absolute;
