@@ -5721,7 +5721,7 @@ img {
   position: relative;
   z-index: 1;
   background: url(../images/cta.jpg) no-repeat center center;
-  height: 400px;
+  min-height: 400px;
   background-attachment: fixed;
 }
 
