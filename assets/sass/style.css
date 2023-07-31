@@ -5722,7 +5722,7 @@ img {
   z-index: 1;
   background: url(../images/cta.jpg) no-repeat center center;
   min-height: 400px;
-  background-attachment: fixed;
+  position: fixed;
 }
 
 @media (min-width: 1600px) {
