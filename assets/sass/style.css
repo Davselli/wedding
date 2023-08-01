@@ -11785,7 +11785,7 @@ body {
 }
 
 .parallax {
-  background-image: url('assets/images/cta.jpg');
+  background-image: url('../images/cta.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
