@@ -24,32 +24,6 @@
     <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
     <link href="assets/css/odometer-theme-default.css" rel="stylesheet">
     <link href="assets/sass/style.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-    $(function() {
-        "use strict";
-        var $skp = $('.skewhero-parallax');
-        var $skm = $('.skewhero-mask');
-        var $hi = $('.hero-image');
-
-        function calcParallax() {
-                var $scroll = $(document).scrollTop();
-                $skm.css({'transform':'skew(24deg) translateX(-' + (0.445 * $scroll) + 'px)'});
-                $skp.css({'transform':'translateY(' + $scroll + 'px)'});
-                $hi.css({'transform':'translateY(' + $scroll + 'px)'});
-        }
-
-        $(window).on('scroll', function () {
-            calcParallax();
-        });
-
-        $(window).resize(function() {
-            calcParallax();
-        });
-    });
-    </script>
-    
-
 </head>
 
 <body class="color2">
@@ -261,15 +235,8 @@
         </section>
         <!-- end couple-section -->
         <!-- start wpo-video-section -->
-        <section id="hero">
-            <div class="hero-container">
-                <div class="hero-image"></div>
-            </div>
-            <div class="skewhero-mask">
-              <div class="skewhero-parallax">
-                <div class="skewhero-image"></div>
-              </div>
-            </div>
+        <section class="wpo-video-section">
+            <h2 class="hidden">some</h2>
         </section>
         <!-- end wpo-video-section-->
         <!-- start story-section -->
