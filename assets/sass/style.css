@@ -11776,3 +11776,10 @@ img {
   }
 }
 /*# sourceMappingURL=style.css.map */
+
+/* styles.css */
+.section {
+  padding: 50px;
+  background-color: #f0f0f0;
+  text-align: center;
+}

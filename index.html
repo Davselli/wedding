@@ -24,6 +24,13 @@
     <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
     <link href="assets/css/odometer-theme-default.css" rel="stylesheet">
     <link href="assets/sass/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll-triggered Animations</title>
+    <!-- Link to AOS CSS file -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Your custom CSS file -->
+    <link href="assets/sass/style.css" rel="stylesheet">
 </head>
 
 <body class="color2">
@@ -235,9 +242,16 @@
         </section>
         <!-- end couple-section -->
         <!-- start wpo-video-section -->
-        <section class="wpo-video-section">
-            <h2 class="hidden">some</h2>
-        </section>
+        <body>
+            <!-- Your HTML content with elements to animate -->
+            <div class="section" data-aos="fade-up">
+              <h1>Hello, I'm a scroll-triggered animated element!</h1>
+            </div>
+          
+            <!-- Link to AOS JavaScript file (place it just before the closing </body> tag) -->
+            <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+            <!-- Your custom JavaScript file (place it just before the closing </body> tag) -->
+            <script src="assets/js/script.js"></script>
         <!-- end wpo-video-section-->
         <!-- start story-section -->
         <section class="story-section section-padding" id="story">
