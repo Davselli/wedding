@@ -5716,69 +5716,70 @@ img {
   }
 }
 
-/* 3.3 wpo-video-section*/
-.wpo-video-section {
-  position: relative;
-  z-index: 1;
-  background: url(../images/cta.jpg) no-repeat center center;
-  min-height: 400px;
-  background-attachment: fixed;
-}
-@media only screen and (max-device-width: 1366px) {
-  .parallax {
-    background-attachment: scroll;
-  }
-}  
-
-@media (min-width: 1600px) {
-  .wpo-video-section .container {
-    max-width: 1400px;
-  }
+/* 3.3 wpo-video-section */
+body {
+  height: 150vh;
 }
 
-.wpo-video-section .video-btn {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  border: 2px solid #fff;
-  text-align: center;
-  border-radius: 50%;
-  line-height: 76px;
-  background: #fff;
+#hero {
+    position: relative;
+    border: none;
+    height: 100vh;
 }
 
-@media (max-width: 575px) {
-  .wpo-video-section .video-btn {
-    width: 50px;
-    height: 50px;
-    line-height: 47px;
-  }
+#hero .hero-container {
+	height: 95%;
+	overflow: hidden;
 }
 
-.wpo-video-section .video-btn .fi {
-  position: relative;
-  right: -3px;
+#hero .hero-container:after {
+	content: "";
+	position: absolute;
+	background: rgba(0,0,0,0.2);
+	height: 95%;
+	top: 0;
+	left: 0;
+	right: 0;
 }
 
-@media (max-width: 575px) {
-  .wpo-video-section .video-btn .fi {
-    right: 0;
-  }
+#hero .hero-image {
+	height: 100%;
+	background-image: url(https://images.unsplash.com/photo-1518791841217-8f162f1e1131);
+	background-repeat: no-repeat;
+	background-size: cover;
+	will-change: transform;
 }
 
-.wpo-video-section .video-btn .fi:before {
-  font-size: 30px;
-  color: #D66371;
+#hero .skewhero-mask {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 10vh;
+	width: 45vw;
+	overflow: hidden;
+	transform: skew(24deg) translateX(0vh);
+	will-change: transform;
 }
 
-@media (max-width: 575px) {
-  .wpo-video-section .video-btn .fi:before {
-    font-size: 20px;
-  }
+#hero .skewhero-parallax {
+	width: 200%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	transform: translateY(0px);
+	will-change: transform;
+}
+
+#hero .skewhero-image {
+	background-image: url(https://images.unsplash.com/photo-1518791841217-8f162f1e1131);
+	background-repeat: no-repeat;
+	height: 100%;
+	background-size: 110% auto;
+	background-position: 0px -35px;
+	transform-origin: right top;
+	transform: skew(-24deg);
 }
 
 /* 3.4 wpo-story-section */
