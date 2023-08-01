@@ -5744,7 +5744,7 @@ body {
 
 #hero .hero-image {
 	height: 100%;
-	background-image: url(https://images.unsplash.com/photo-1518791841217-8f162f1e1131);
+	background-image: url(../images/cta.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	will-change: transform;
@@ -5773,7 +5773,7 @@ body {
 }
 
 #hero .skewhero-image {
-	background-image: url(https://images.unsplash.com/photo-1518791841217-8f162f1e1131);
+	background-image: url(../images/cta.jpg);
 	background-repeat: no-repeat;
 	height: 100%;
 	background-size: 110% auto;
