@@ -6231,8 +6231,9 @@ img {
 .wpo-cta-section,
 .wpo-cta-section-s2,
 .wpo-cta-section-s3 {
-  padding: 145px 0;
+  padding: 200px 0;
   background: url(../images/cta2.jpg) no-repeat center center;
+  background-size: cover;
   position: relative;
   z-index: 1;
 }
