@@ -954,17 +954,7 @@
     /*==========================================================================
         WHEN WINDOW SCROLL
     ==========================================================================*/
-    $(window).on("scroll", function() {
 
-        if ($(".wpo-site-header").length) {
-           stickyMenu( $('.wpo-site-header .navigation'), "sticky-on" );
-        }
-
-        toggleBackToTopBtn();
-
-        activeMenuItem($(".navigation-holder"));
-
-    });
 
 
     /*==========================================================================

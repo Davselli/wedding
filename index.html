@@ -397,8 +397,8 @@
                                 <div class="wpo-event-text">
                                     <h2>The Reception</h2>
                                     <ul>
-                                        <li>Monday, 25 Sep, 2022 <br>
-                                            1:00 PM – 4:30 PM</li>
+                                        <li>Saturday, 8 June, 2024 <br>
+                                            5:00 PM</li>
                                         <li>Estern Star Plaza, Road 123, USA</li>
                                         <li>+1 234-567-8910</li>
 
@@ -414,8 +414,8 @@
                                 <div class="wpo-event-text">
                                     <h2>The Ceremony</h2>
                                     <ul>
-                                        <li>Monday, 25 Sep, 2022 <br>
-                                            1:00 PM – 4:30 PM</li>
+                                        <li>Saturday, 8 June, 2024 <br>
+                                            5:30 PM</li>
                                         <li>Estern Star Plaza, Road 123, USA</li>
                                         <li>+1 234-567-8910</li>
                                         <li> <a class="popup-gmaps"
@@ -430,8 +430,8 @@
                                 <div class="wpo-event-text">
                                     <h2>Wedding Party</h2>
                                     <ul>
-                                        <li>Monday, 25 Sep, 2022 <br>
-                                            1:00 PM – 4:30 PM</li>
+                                        <li>Saturday, 8 June, 2024 <br>
+                                            6:30 PM</li>
                                         <li>Estern Star Plaza, Road 123, USA</li>
                                         <li>+1 234-567-8910</li>
                                         <li> <a class="popup-gmaps"
@@ -503,9 +503,11 @@
                                     <h3>Information</h3>
                                 </div>
                                 <ul>
-                                    <li><a href="#couple">About Us</a></li>
+                                    <li><a href="#" data-target="couple">About us</a></li>
                                     <li><a href="accomodation.html">Accomodation</a></li>
-                                    <li><a href="#story">Our story</a></li>
+                                    <li><a href="#" data-target="story">Our story</a></li>
+                                    
+
                                 </ul>
                             </div>
                         </div>
@@ -568,6 +570,50 @@
     <script src="assets/js/script.js"></script>
     <script src="assets/js/parallax.js"></script>
     <script src="assets/js/parallax.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/modernizr.custom.js"></script>
+<script src="assets/js/jquery.dlmenu.js"></script>
+<script src="assets/js/jquery-plugin-collection.js"></script>
+<script src="assets/js/spirit.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/parallax.js"></script>
+<script src="assets/js/parallax.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Handle links to scroll to specific sections
+        $("[data-target]").click(function() {
+            var targetSection = $(this).data('target');
+            $('html, body').animate({
+                scrollTop: $("#" + targetSection).offset().top
+            }, 700); // Adjust the duration as needed
+            return false; // Prevent default link behavior
+        });
+
+        // Show/hide the "Back to Top" button based on scrolling position
+        $(window).scroll(function() {
+            toggleBackToTopBtn();
+        });
+
+        function toggleBackToTopBtn() {
+            var amountScrolled = 1000;
+            if ($(window).scrollTop() > amountScrolled) {
+                $("a.back-to-top").fadeIn("slow");
+            } else {
+                $("a.back-to-top").fadeOut("slow");
+            }
+        }
+
+        // Scroll to top when "Back to Top" button is clicked
+        $(".back-to-top").on("click", function() {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 700);
+            return false;
+        });
+    });
+</script>
 </body>
 
 </html>
