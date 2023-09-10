@@ -902,7 +902,7 @@
                 what: "Please enter your Reason",
                 service: "Please select your contact service",
                 guest: "Please select your guest Number",
-                meal: "Please select your Meal Name"
+                meal: "Please select your diet requirement"
             },
 
             submitHandler: function (form) {
