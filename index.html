@@ -22,8 +22,32 @@
     <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
     <link href="assets/css/odometer-theme-default.css" rel="stylesheet">
     <link href="assets/sass/style.css" rel="stylesheet">
+    <title>Video Page</title>
+    <style>
+        /* Apply minimal styling to make the video cover the entire viewport */
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Media query for adjusting video size on smaller screens */
+        @media (max-width: 768px) {
+            video {
+                height: auto;
+            }
+        }
+    </style>
 </head>
-<body class="color2">
+<body>
     <div class="page-wrapper">
         <div class="preloader">
             <div class="vertical-centered-box">
@@ -36,21 +60,36 @@
                 </div>
             </div>
         </div>
-        <div class="wpo-cta-section">
-            <div class="container-fluid">
-                <div class="wpo-cta-item mb-4">
-                    <a class="theme-btn-s2" href="english.html">English</a>
-                </div>
-                <div class="wpo-cta-item mb-4">
-                    <a class="theme-btn-s2" href="english.html">English</a>
-                </div>
+        <video id="background-video" autoplay loop muted playsinline>
+            <source src="assets/videos/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="custom-section">
+            <div class="centered-buttons">
+              <a class="theme-btn-s2" href="english.html">English</a>
+              <a class="theme-btn-s2" href="english.html">English</a>
             </div>
-        </div>
+          </div>
     </div>
-    
-    <!-- All JavaScript files -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery-plugin-collection.js"></script>
-    <script src="assets/js/script.js"></script>
+    </div>
+    <script>
+        // Reference to the video element
+        const video = document.getElementById('background-video');
+
+        // Function to toggle audio on and off
+        function toggleAudio() {
+            if (video.muted) {
+                video.muted = false; // Unmute the video
+            } else {
+                video.muted = true; // Mute the video
+            }
+        }
+
+        // Add a click event listener to the document
+        document.addEventListener('click', toggleAudio);
+    </script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery-plugin-collection.js"></script>
+        <script src="assets/js/script.js"></script>    
 </body>
 </html>

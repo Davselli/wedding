@@ -6330,6 +6330,7 @@ img {
   left: -10px;
 }
 
+
 /* 3.6 wpo-portfolio-section*/
 .wpo-portfolio-section,
 .wpo-portfolio-section-s2 {
@@ -11829,3 +11830,38 @@ img {
   color: #fff; /* Modify this value to change the color of the content text */
   /* Add additional styles as needed */
 }
+
+/* Style the video as a background */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Place it behind all other content */
+  object-fit: cover;
+  object-position: center; /* Center the video within its container */
+}
+
+/* Style the centered buttons */
+.centered-buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3; /* Place it above the video */
+  /* Add your button styles here */
+}
+
+/* Style the custom section */
+.custom-section {
+  min-height: 100vh; /* Use min-height to cover the full height of the screen */
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
