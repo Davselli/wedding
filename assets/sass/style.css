@@ -11836,7 +11836,7 @@ img {
   bottom: 10px; /* Adjust the distance from the bottom as needed */
   right: 10px; /* Adjust the distance from the right as needed */
   z-index: 10001; /* Place the logo above everything */
-  width: 200px; /* Set the desired width */
+  max-width: 100%; /* Make the logo responsive */
   height: auto; /* Maintain aspect ratio */
 }
 
