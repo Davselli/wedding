@@ -66,10 +66,10 @@
         </video>
         <div class="custom-section">
             <div class="centered-buttons">
-              <a class="theme-btn-s2" href="english.html">English</a><br>
-              <a class="theme-btn-s2" href="english.html">English</a>
+                <a class="theme-btn-s2" href="english.html" onclick="preventAudioStart(event)">English</a><br>
+                <a class="theme-btn-s2" href="english.html" onclick="preventAudioStart(event)">English</a>
             </div>
-          </div>
+        </div>
     </div>
     </div>
     <script>
@@ -85,11 +85,17 @@
             }
         }
 
-        // Add a click event listener to the document
-        document.addEventListener('click', toggleAudio);
+        // Function to prevent audio start and navigate to the new page
+        function preventAudioStart(event) {
+            event.preventDefault(); // Prevent the default navigation behavior
+            toggleAudio(); // Toggle audio (optional)
+            setTimeout(() => {
+                window.location.href = event.target.getAttribute('href'); // Navigate to the new page after a delay (adjust as needed)
+            }, 100); // Delay in milliseconds before navigation
+        }
     </script>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery-plugin-collection.js"></script>
-        <script src="assets/js/script.js"></script>    
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery-plugin-collection.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
