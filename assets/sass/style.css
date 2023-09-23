@@ -11843,7 +11843,7 @@ img {
 /* Adjust logo for screens smaller than 768px (standard tablet size) */
 @media (max-width: 768px) {
   .logo2 {
-      max-width: 100%; /* Adjust the maximum width as needed */
+      max-width: 50%; /* Adjust the maximum width as needed */
       bottom: 5px; /* Adjust the position from the bottom as needed */
       right: 5px; /* Adjust the position from the right as needed */
   }
