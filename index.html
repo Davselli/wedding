@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +24,6 @@
     <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
     <link href="assets/css/odometer-theme-default.css" rel="stylesheet">
     <link href="assets/sass/style.css" rel="stylesheet">
-    <title>Video Page</title>
     <style>
         /* Apply minimal styling to make the video cover the entire viewport */
         body {
@@ -106,13 +106,21 @@
         }
     </style>
 </head>
-<body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader"></div>
-    </div>
-
+<body class="color2">
     <div class="page-wrapper">
+                <!-- start preloader -->
+                <div class="preloader">
+                    <div class="vertical-centered-box">
+                        <div class="content">
+                            <div class="loader-circle"></div>
+                            <div class="loader-line-mask">
+                                <div class="loader-line"></div>
+                            </div>
+                            <img src="assets/images/preloader.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- end preloader -->
         <video id="background-video" autoplay loop muted playsinline>
             <source src="assets/videos/video.mp4" type="video/mp4">
             Your browser does not support the video tag.
