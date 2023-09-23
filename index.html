@@ -172,5 +172,16 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-plugin-collection.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+        // Function to refresh the page when scrolling down
+        function refreshOnScroll() {
+            if (window.scrollY > 100) { // Adjust the scroll position as needed
+                location.reload();
+            }
+        }
+
+        // Add a scroll event listener to trigger the refresh function
+        window.addEventListener('scroll', refreshOnScroll);
+    </script>
 </body>
 </html>
