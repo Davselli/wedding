@@ -620,10 +620,10 @@ img {
   position: relative;
 }
 
-@media (max-width: 991px) {
+/* Media query for adjusting button styles on smaller screens */
+@media (max-width: 768px) {
   .theme-btn-s2 {
-    font-size: 14px;
-    font-size: 0.93333rem;
+      font-size: 16px; /* Adjust font size for smaller screens */
   }
 }
 
@@ -11845,14 +11845,13 @@ img {
   object-position: center; /* Center the video within its container */
 }
 
-/* Style the centered buttons */
+/* Center the buttons using flexbox */
 .centered-buttons {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3; /* Place it above the video */
-  /* Add your button styles here */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Ensure full height of the parent container */
 }
 
 /* Style the custom section */
