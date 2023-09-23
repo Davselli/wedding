@@ -50,6 +50,43 @@
             z-index: 9999; /* Place the overlay above everything */
         }
 
+        /* Style for the centered buttons */
+        .centered-buttons {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10000; /* Place the buttons above the overlay */
+        }
+
+        /* Preloader styles */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff; /* Change to match your background color */
+            z-index: 10001; /* Place the preloader above everything */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         /* Media query for adjusting video size on smaller screens */
         @media (max-width: 768px) {
             video {
@@ -59,25 +96,23 @@
     </style>
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
     <div class="page-wrapper">
-        <div class="preloader">
-            <div class="vertical-centered-box">
-                <div class="content">
-                    <div class="loader-circle"></div>
-                    <div class="loader-line-mask">
-                        <div class="loader-line"></div>
-                    </div>
-                    <img src="assets/images/preloader.png" alt="">
-                </div>
-            </div>
-        </div>
         <video id="background-video" autoplay loop muted playsinline>
             <source src="assets/videos/video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <!-- Transparent overlay to capture taps -->
         <div class="overlay" onclick="toggleAudio(event)"></div>
-    </div>
+        <!-- Centered buttons -->
+        <div class="centered-buttons">
+            <a class="theme-btn-s2" href="english.html" onclick="preventAudioStart(event)">English</a>
+            <a class="theme-btn-s2" href="english.html" onclick="preventAudioStart(event)">English</a>
+        </div>
     </div>
     <script>
         // Reference to the video element
@@ -100,6 +135,25 @@
                 }
             }
         }
+
+        // Function to prevent audio start and navigate to the new page
+        function preventAudioStart(event) {
+            event.preventDefault(); // Prevent the default navigation behavior
+            toggleAudio(event); // Toggle audio (optional)
+            setTimeout(() => {
+                window.location.href = event.target.getAttribute('href'); // Navigate to the new page after a delay (adjust as needed)
+            }, 100); // Delay in milliseconds before navigation
+
+            // Hide the preloader
+            const preloader = document.querySelector('.preloader');
+            preloader.style.display = 'none';
+        }
+
+        // Hide the preloader when the page has finished loading
+        window.addEventListener('load', () => {
+            const preloader = document.querySelector('.preloader');
+            preloader.style.display = 'none';
+        });
     </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-plugin-collection.js"></script>

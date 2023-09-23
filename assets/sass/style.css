@@ -11831,36 +11831,3 @@ img {
   /* Add additional styles as needed */
 }
 
-/* Style the video as a background */
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1; /* Place it behind all other content */
-  object-fit: cover;
-  object-position: center; /* Center the video within its container */
-}
-
-/* Center the buttons using flexbox */
-.centered-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%; /* Ensure full height of the parent container */
-}
-
-/* Style the custom section */
-.custom-section {
-  min-height: 100vh; /* Use min-height to cover the full height of the screen */
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-}
-
