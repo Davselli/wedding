@@ -11831,3 +11831,12 @@ img {
   /* Add additional styles as needed */
 }
 
+.logo {
+  position: fixed;
+  bottom: 10px; /* Adjust the distance from the bottom as needed */
+  right: 10px; /* Adjust the distance from the right as needed */
+  z-index: 10001; /* Place the logo above everything */
+  width: 200px; /* Set the desired width */
+  height: auto; /* Maintain aspect ratio */
+}
+

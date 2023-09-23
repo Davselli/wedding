@@ -40,7 +40,7 @@
         }
 
         /* Style for the transparent overlay */
-        .overlay {
+                .overlay {
             position: fixed;
             top: 0;
             left: 0;
@@ -48,6 +48,16 @@
             height: 100%;
             background: transparent;
             z-index: 9999; /* Place the overlay above everything */
+        }
+
+        /* Define the area to exclude (bottom right corner) */
+        .overlay-exclude {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100px; /* Adjust the width as needed */
+            height: 100px; /* Adjust the height as needed */
+            background: transparent; /* Transparent background for the excluded area */
         }
 
         /* Style for the centered buttons */
@@ -114,6 +124,9 @@
             <a class="theme-btn-s2" href="english.html" onclick="preventAudioStart(event)">English</a>
         </div>
     </div>
+    <a href="https://sarapivisuals.com" target="_blank">
+        <img src="assets/images/partners/sara.png" alt="Sara Logo" class="logo">
+    </a>
     <script>
         // Reference to the video element
         const video = document.getElementById('background-video');
