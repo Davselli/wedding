@@ -70,6 +70,20 @@
             z-index: 10000; /* Place the buttons above the overlay */
         }
 
+        /* Preloader styles */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff; /* Change to match your background color */
+            z-index: 10001; /* Place the preloader above everything */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .loader {
             border: 4px solid #f3f3f3;
             border-top: 4px solid #3498db;
@@ -94,7 +108,21 @@
 </head>
 <body>
     <div class="page-wrapper">
-        <video id="background-video" autoplay muted playsinline>
+                <!-- start preloader -->
+                <div class="preloader">
+                    <div class="vertical-centered-box">
+                        <div class="content">
+                            <div class="loader-circle"></div>
+                            <div class="loader-line-mask">
+                                <div class="loader-line"></div>
+                            </div>
+                            <img src="assets/images/preloader.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- end preloader -->
+        <div class="loader"></div>
+        <video id="background-video" autoplay loop muted playsinline>
             <source src="assets/videos/video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -139,6 +167,16 @@
                 window.location.href = event.target.getAttribute('href'); // Navigate to the new page after a delay (adjust as needed)
             }, 100); // Delay in milliseconds before navigation
 
+            // Hide the preloader
+            const preloader = document.querySelector('.preloader');
+            preloader.style.display = 'none';
+        }
+
+        // Hide the preloader when the page has finished loading
+        window.addEventListener('load', () => {
+            const preloader = document.querySelector('.preloader');
+            preloader.style.display = 'none';
+        });
     </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-plugin-collection.js"></script>
