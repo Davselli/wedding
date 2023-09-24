@@ -97,7 +97,7 @@
 </head>
 <body>
     <div id="video-container">
-        <video id="fullscreen-video" autoplay loop muted playsinline>
+        <video id="fullscreen-video" autoplay muted playsinline>
             <!-- Add all three video sources with different qualities -->
             <source id="video-source-max" src="assets/videos/video_max.mp4" type="video/mp4">
             <source id="video-source-medium" src="assets/videos/video_medium.mp4" type="video/mp4">
@@ -117,9 +117,17 @@
 
     <script>
         const videoElement = document.getElementById('fullscreen-video');
+        const videoContainer = document.getElementById('video-container');
         const videoSourceMax = document.getElementById('video-source-max');
         const videoSourceMedium = document.getElementById('video-source-medium');
         const videoSourceLow = document.getElementById('video-source-low');
+        let audioMuted = true;
+
+        // Function to toggle audio on click/tap
+        function toggleAudio() {
+            audioMuted = !audioMuted;
+            videoElement.muted = audioMuted;
+        }
 
         // Function to determine the user's bandwidth
         function getBandwidth() {
