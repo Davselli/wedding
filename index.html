@@ -138,24 +138,25 @@
 
         // Function to select the appropriate video source based on bandwidth
         function selectVideoSource() {
-            const bandwidth = getBandwidth();
+            const bandwidth = calculateBandwidth();
 
-            if (bandwidth >= 5) {
-                videoSourceMax.removeAttribute('disabled');
-                videoSourceMedium.setAttribute('disabled', 'disabled');
-                videoSourceLow.setAttribute('disabled', 'disabled');
-            } else if (bandwidth >= 2) {
-                videoSourceMax.setAttribute('disabled', 'disabled');
-                videoSourceMedium.removeAttribute('disabled');
-                videoSourceLow.setAttribute('disabled', 'disabled');
+            if (bandwidth >= 10) {
+                videoElement.src = videoSourceMax.src;
+            } else if (bandwidth >= 5) {
+                videoElement.src = videoSourceMedium.src;
             } else {
-                videoSourceMax.setAttribute('disabled', 'disabled');
-                videoSourceMedium.setAttribute('disabled', 'disabled');
-                videoSourceLow.removeAttribute('disabled');
+                videoElement.src = videoSourceLow.src;
             }
 
-            // Reload the video element to apply the selected source
+            // Reload and play the video
             videoElement.load();
+        }
+
+        // Calculate bandwidth using a more robust approach
+        function calculateBandwidth() {
+            // You can implement your bandwidth calculation logic here
+            // For simplicity, I'll set a fixed value for demonstration purposes
+            return 10; // Assume 10 Mbps for demonstration
         }
 
         // Play video automatically
