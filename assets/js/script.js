@@ -1084,32 +1084,3 @@
 
 })(window.jQuery);
 
-function downloadICS() {
-    const icsData = `
-        BEGIN:VCALENDAR
-        VERSION:2.0
-        BEGIN:VEVENT
-        DTSTART:20240608T170000
-        DTEND:20240609T030000
-        SUMMARY:Davide & Simona - Sardegna 2024
-        DESCRIPTION:Matrominio Davide & Simona - Sardegna 2024
-        LOCATION: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3090.7467947750147!2d9.202099176517086!3d39.22591602725268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12e0cb389b75946d%3A0x7a60140427d15cb8!2sFrontemare!5e0!3m2!1sen!2sie!4v1694377603837!5m2!1sen!2sie
-        
-        BEGIN:VALARM
-        TRIGGER:-P1M
-        ACTION:DISPLAY
-        DESCRIPTION:1 month before the event
-        END:VALARM
-        
-        END:VEVENT
-        END:VCALENDAR
-    `;
-  
-    const encodedICSData = encodeURIComponent(icsData);
-    const dataUri = `data:text/calendar;charset=utf8,${encodedICSData}`;
-  
-    const downloadLink = document.createElement('a');
-    downloadLink.href = dataUri;
-    downloadLink.download = 'event.ics';
-    downloadLink.click();
-  }
