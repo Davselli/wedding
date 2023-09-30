@@ -405,6 +405,10 @@ img {
   padding: 5px 10px; /* Adjust the padding as needed */
 }
 
+.save-the-date::before {
+  content: "Save the Date";
+  color: white; /* Set the text color to white */
+}
 
 
 /** for popup image ***/
