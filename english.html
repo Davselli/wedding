@@ -27,7 +27,6 @@
 </head>
 
 <body class="color2">
-    <a href='#' class='back-to-top2'><span>Save The Date</span></a>
     <!-- start page-wrapper -->
     <div class="page-wrapper">
                 <!-- start preloader -->
@@ -623,31 +622,10 @@
             } else {
                 $("a.back-to-top").fadeOut("slow");
             }
-        };
+        }
 
         // Scroll to top when "Back to Top" button is clicked
         $(".back-to-top").on("click", function() {
-            $("html, body").animate({
-                scrollTop: 0
-            }, 700);
-            return false;
-        });
-
-        // Show/hide the "Back to Top2" button based on scrolling position
-        $(window).scroll(function() {
-            toggleBackToTopBtn2();
-        });
-
-        function toggleBackToTopBtn2() {
-            var amountScrolled = 1000;
-            if ($(window).scrollTop() > amountScrolled) {
-                $("a.back-to-top2").fadeIn("slow");
-            } else {
-                $("a.back-to-top2").fadeOut("slow");
-            }
-        };
-                // Scroll to top when "Back to Top" button is clicked
-                $(".back-to-top2").on("click", function() {
             $("html, body").animate({
                 scrollTop: 0
             }, 700);

@@ -366,7 +366,7 @@ img {
 }
 
 /*** back to top2 **/
-.back-to-top2 {
+.save-the-date {
   background-color: rgba(214, 99, 113, 0.7);
   width: auto;
   height: auto;
@@ -394,11 +394,11 @@ img {
   }
 }
 
-.back-to-top2:hover {
+.save-the-date:hover {
   background-color: #D66371;
 }
 
-.back-to-top2 span {
+.save-the-date span {
   font-size: 18px;
   font-size: 1.2rem;
   color: #fff;

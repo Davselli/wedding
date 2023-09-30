@@ -869,37 +869,6 @@
     })
 
     /*------------------------------------------
-        = BACK TO TOP2 BTN SETTING
-    -------------------------------------------*/
-
-    $(".back-to-top2").on("click", function() {
-        const icsData = `BEGIN:VCALENDAR
-        VERSION:2.0
-        PRODID:-//Your Organization//Event Calendar//EN
-        BEGIN:VEVENT
-        UID:123456
-        SUMMARY:Matrimonio Davide & Simona
-        DESCRIPTION:Matrimonio Davide & Simona - Sabato 8 Giugno 2024 - 5:00 pm - Frontemare - Sardegna
-        DTSTART:20240608T170000Z
-        DTEND:20240608T180000Z
-        END:VEVENT
-        END:VCALENDAR`;
-        
-                    const blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
-                    const url = window.URL.createObjectURL(blob);
-        
-                    const a = document.createElement("a");
-                    a.href = url;
-                    a.download = "Matrimonio_Davide_Simona.ics";
-                    document.body.appendChild(a);
-                    a.click();
-        
-                    window.URL.revokeObjectURL(url);
-                });
-
-
-
-    /*------------------------------------------
         = CONTACT FORM SUBMISSION
     -------------------------------------------*/
     if ($("#contact-form-main").length) {
