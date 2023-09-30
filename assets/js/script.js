@@ -852,14 +852,44 @@
     -------------------------------------------*/
     $("body").append("<a href='#' class='back-to-top'><i class='ti-arrow-up'></i></a>");
 
-    function toggleBackToTopBtn() {
-        var amountScrolled = 1000;
-        if ($(window).scrollTop() > amountScrolled) {
-            $("a.back-to-top").fadeIn("slow");
-        } else {
-            $("a.back-to-top").fadeOut("slow");
+        // Function to handle showing/hiding the button on scroll
+        function toggleSaveTheDateButton() {
+            var amountScrolled = 100; // Adjust this value as needed
+            if (window.scrollY > amountScrolled) {
+                document.getElementById("saveTheDateButton").style.display = "block";
+            } else {
+                document.getElementById("saveTheDateButton").style.display = "none";
+            }
         }
-    }
+
+        // Attach the scroll event listener
+        window.addEventListener("scroll", toggleSaveTheDateButton);
+
+        // Function to handle the button click (download the ICS file)
+        document.getElementById("saveTheDateButton").addEventListener("click", function () {
+            const icsData = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Your Organization//Event Calendar//EN
+BEGIN:VEVENT
+UID:123456
+SUMMARY:Matrimonio Davide & Simona
+DESCRIPTION:Matrimonio Davide & Simona - Sabato 8 Giugno 2024 - 5:00 pm - Frontemare - Sardegna
+DTSTART:20240608T170000Z
+DTEND:20240608T180000Z
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
+            const url = window.URL.createObjectURL(blob);
+
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "Matrimonio_Davide_Simona.ics";
+            document.body.appendChild(a);
+            a.click();
+
+            window.URL.revokeObjectURL(url);
+        });
 
     $(".back-to-top").on("click", function() {
         $("html,body").animate({
