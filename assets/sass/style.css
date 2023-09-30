@@ -365,6 +365,48 @@ img {
   transform: translate(-50%, -50%);
 }
 
+/*** back to top2 **/
+.back-to-top2 {
+  background-color: rgba(214, 99, 113, 0.7);
+  width: auto;
+  height: auto;
+  min-width: 45px;
+  min-height: 45px;
+  line-height: normal;
+  border: 2px solid #D66371;
+  border-radius: 40%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 999;
+  left: 15px;
+  bottom: 15px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+@media (max-width: 991px) {
+  .back-to-top2 {
+    min-width: 35px;
+    min-height: 35px;
+  }
+}
+
+.back-to-top2:hover {
+  background-color: #D66371;
+}
+
+.back-to-top2 span {
+  font-size: 18px;
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 5px 10px; /* Adjust the padding as needed */
+}
+
+
+
 /** for popup image ***/
 .mfp-wrap {
   background-color: rgba(0, 0, 0, 0.9);
