@@ -848,13 +848,13 @@
 
 
      /*------------------------------------------
-        = BACK TO TOP BTN SETTING
+        = BACK TO TOP & SAVE THE DATE BTN SETTING
     -------------------------------------------*/
     $("body").append("<a href='#' class='back-to-top'><i class='ti-arrow-up'></i></a>");
 
         // Function to handle showing/hiding the button on scroll
         function toggleSaveTheDateButton() {
-            var amountScrolled = 100; // Adjust this value as needed
+            var amountScrolled = 1000; // Adjust this value as needed
             if (window.scrollY > amountScrolled) {
                 document.getElementById("saveTheDateButton").style.display = "block";
             } else {
