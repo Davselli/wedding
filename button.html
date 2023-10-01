@@ -4,17 +4,17 @@
     <title>ICS File Download</title>
 </head>
 <body>
-    <button id="downloadButton">Download Event Calendar AND 3</button>
+    <button id="downloadButton">Download Event Calendar AND 4</button>
 
     <script>
-        document.getElementById("downloadButton").addEventListener("click", function () {
-            const startDate = new Date("2024-06-08T17:00:00");
-            const endDate = new Date("2024-06-08T18:00:00");
-            const summary = "Matrimonio Davide & Simona";
-            const location = "Frontemare - Sardegna";
-            const description = "Matrimonio Davide & Simona - Sabato 8 Giugno 2024 - 5:00 pm - Frontemare - Sardegna";
+document.getElementById("downloadButton").addEventListener("click", function () {
+    const startDate = new Date("2024-06-08T17:00:00");
+    const endDate = new Date("2024-06-08T18:00:00");
+    const summary = "Matrimonio Davide & Simona";
+    const location = "Frontemare - Sardegna";
+    const description = "Matrimonio Davide & Simona - Sabato 8 Giugno 2024 - 5:00 pm - Frontemare - Sardegna";
 
-            const icsData = `BEGIN:VCALENDAR
+    const icsData = `BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//Your Organization//Event Calendar//EN
 BEGIN:VEVENT
@@ -27,17 +27,18 @@ ORGANIZER:"Your Organizer"
 END:VEVENT
 END:VCALENDAR`;
 
-            const blob = new Blob([calendarData.join("\r\n")], { type: "text/calendar;charset=utf-8" });
-            const url = window.URL.createObjectURL(blob);
+    const blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
+    const url = window.URL.createObjectURL(blob);
 
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = "Matrimonio_Davide_Simona.ics";
-            document.body.appendChild(a);
-            a.click();
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "Matrimonio_Davide_Simona.ics";
+    document.body.appendChild(a);
+    a.click();
 
-            window.URL.revokeObjectURL(url);
-        });
+    window.URL.revokeObjectURL(url);
+});
+
     </script>
 </body>
 </html>
