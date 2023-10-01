@@ -4,7 +4,7 @@
     <title>ICS File Download</title>
 </head>
 <body>
-    <button id="downloadButton">Download ICS File FINALE</button>
+    <button id="downloadButton">Download ICS File FINALE 2</button>
 
     <script>
         document.getElementById("downloadButton").addEventListener("click", function () {
@@ -28,6 +28,16 @@ SEQUENCE:2
 STATUS:CONFIRMED
 SUMMARY:Matrimonio Davide & Simona
 TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P0DT0H5M0S
+DESCRIPTION:This is an event reminder
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:This is an event reminder
+END:VALARM
 END:VEVENT
 END:VCALENDAR`;
 
