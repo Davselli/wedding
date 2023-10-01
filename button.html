@@ -4,7 +4,7 @@
     <title>ICS File Download</title>
 </head>
 <body>
-    <button id="downloadButton">Download Event Calendar AND2</button>
+    <button id="downloadButton">Download Event Calendar AND 3</button>
 
     <script>
         document.getElementById("downloadButton").addEventListener("click", function () {
@@ -14,20 +14,18 @@
             const location = "Frontemare - Sardegna";
             const description = "Matrimonio Davide & Simona - Sabato 8 Giugno 2024 - 5:00 pm - Frontemare - Sardegna";
 
-            const calendarData = [
-                "BEGIN:VCALENDAR",
-                "VERSION:2.0",
-                "PRODID:-//Your Organization//Event Calendar//EN",
-                "BEGIN:VEVENT",
-                "UID:" + new Date().toISOString(),
-                "SUMMARY:" + summary,
-                "DESCRIPTION:" + description,
-                "LOCATION:" + location,
-                "DTSTART:" + startDate.toISOString().replace(/-|:|\.\d+/g, ""),
-                "DTEND:" + endDate.toISOString().replace(/-|:|\.\d+/g, ""),
-                "END:VEVENT",
-                "END:VCALENDAR"
-            ];
+            const icsData = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Your Organization//Event Calendar//EN
+BEGIN:VEVENT
+UID:123456
+SUMMARY:Matrimonio Davide & Simona
+DESCRIPTION:Matrimonio Davide & Simona - Sabato 8 Giugno 2024 - 5:00 pm - Frontemare - Sardegna
+DTSTART:20240608T170000Z
+DTEND:20240608T180000Z
+ORGANIZER:"Your Organizer"
+END:VEVENT
+END:VCALENDAR`;
 
             const blob = new Blob([calendarData.join("\r\n")], { type: "text/calendar;charset=utf-8" });
             const url = window.URL.createObjectURL(blob);
