@@ -4,24 +4,17 @@
     <title>ICS File Download</title>
 </head>
 <body>
-    <button id="downloadButton">Download ICS File FINALE 3</button>
+    <button id="downloadButton">Download ICS File FINALE 4</button>
 
     <script>
         document.getElementById("downloadButton").addEventListener("click", function () {
-            // Check if the user is on an Android device
             const isAndroid = /Android/i.test(navigator.userAgent);
-            
-            // Check if the user is on Android and doesn't have Google Calendar
-            if (isAndroid && !window.navigator.userAgent.includes("com.google.android.calendar")) {
-                alert("Please install Google Calendar to import the ICS file on your Android device.");
-                return;
-            }
+            const userLanguage = navigator.language.toLowerCase();
             const icsData = `BEGIN:VCALENDAR
 PRODID:-//Google Inc//Google Calendar 70.9054//EN
 VERSION:2.0
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:test
 X-WR-TIMEZONE:Europe/Dublin
 BEGIN:VEVENT
 DTSTART:20240608T150000Z
@@ -49,6 +42,7 @@ END:VALARM
 END:VEVENT
 END:VCALENDAR`;
 
+
 const blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
             const url = window.URL.createObjectURL(blob);
 
@@ -59,6 +53,14 @@ const blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
             a.click();
 
             window.URL.revokeObjectURL(url);
+
+            if (isAndroid) {
+                if (userLanguage.includes('it')) {
+                    alert("Per aggiungere questo evento al tuo calendario, dovresti avere Google Calendar o una app compatibile.");
+                } else {
+                    alert("To add this event to your calendar, you must have Google Calendar or a compatible app.");
+                }
+            }
         });
     </script>
 </body>
