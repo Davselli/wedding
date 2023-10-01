@@ -865,7 +865,8 @@
         // Attach the scroll event listener
         window.addEventListener("scroll", toggleSaveTheDateButton);
 
-        document.getElementById("downloadButton").addEventListener("click", function () {
+        // Function to handle the button click (download the ICS file)
+        document.getElementById("saveTheDateButton").addEventListener("click", function () {
             const isAndroid = /Android/i.test(navigator.userAgent);
             const userLanguage = navigator.language.toLowerCase();
             const icsData = `BEGIN:VCALENDAR
