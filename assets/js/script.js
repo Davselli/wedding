@@ -865,21 +865,43 @@
         // Attach the scroll event listener
         window.addEventListener("scroll", toggleSaveTheDateButton);
 
-        // Function to handle the button click (download the ICS file)
-        document.getElementById("saveTheDateButton").addEventListener("click", function () {
+        document.getElementById("downloadButton").addEventListener("click", function () {
+            const isAndroid = /Android/i.test(navigator.userAgent);
+            const userLanguage = navigator.language.toLowerCase();
             const icsData = `BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
 VERSION:2.0
-PRODID:-//Your Organization//Event Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-TIMEZONE:Europe/Dublin
 BEGIN:VEVENT
-UID:123456
+DTSTART:20240608T150000Z
+DTEND:20240609T010000Z
+DTSTAMP:20231001T091729Z
+UID:7107l38qaongbrtd0ah1fsmib8@google.com
+CLASS:PUBLIC
+CREATED:20230425T125949Z
+LAST-MODIFIED:20231001T091720Z
+LOCATION:Frontemare\, Viale Lungomare del Golfo\, 150\, 09045 Quartu Sant'Elena CA\, Italy
+SEQUENCE:2
+STATUS:CONFIRMED
 SUMMARY:Matrimonio Davide & Simona
-DESCRIPTION:Matrimonio Davide & Simona - Sabato 8 Giugno 2024 - 5:00 pm - Frontemare - Sardegna
-DTSTART:20240608T170000Z
-DTEND:20240608T180000Z
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P0DT0H5M0S
+DESCRIPTION:This is an event reminder
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P7D
+DESCRIPTION:This is an event reminder
+END:VALARM
 END:VEVENT
 END:VCALENDAR`;
 
-            const blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
+
+const blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
             const url = window.URL.createObjectURL(blob);
 
             const a = document.createElement("a");
@@ -889,6 +911,14 @@ END:VCALENDAR`;
             a.click();
 
             window.URL.revokeObjectURL(url);
+
+            if (isAndroid) {
+                if (userLanguage.includes('it')) {
+                    alert("Per cortesia assicurati di avere Google Calendar o una app compatibile.");
+                } else {
+                    alert("Please make sure to have Google Calendar or a compatible app.");
+                }
+            }
         });
 
     $(".back-to-top").on("click", function() {
