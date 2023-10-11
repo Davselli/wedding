@@ -2640,7 +2640,7 @@ img {
   }
   .wpo-site-header .mobail-menu button {
     background-color: #a3888c;
-    width: 40px;
+    width: 60px;
     height: 35px;
     border: 0;
     padding: 5px 10px;
@@ -2654,7 +2654,7 @@ img {
   }
   .wpo-site-header .mobail-menu button span {
     background-color: #fff;
-    width: 20px;
+    width: 60px;
     display: block;
     height: 2px;
     margin-bottom: 5px;
