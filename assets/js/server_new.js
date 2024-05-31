@@ -1,4 +1,22 @@
-require('dotenv').config();
+const fs = require('fs');
+
+// Read the contents of the .env file
+const envFile = fs.readFileSync('.env', 'utf8');
+
+// Parse the contents to extract the variable
+const matches = envFile.match(/GITHUB_TOKEN=(.*)/);
+
+// Check if the variable exists in the .env file
+if (matches && matches[1]) {
+    const token = matches[1];
+    console.log('GitHub Token:', token);
+
+    // Now you can use the token in your code
+    // For example:
+    // const github = new GitHub({ token });
+} else {
+    console.error('GitHub Token not found in .env file');
+}
 
 document.getElementById('uploadButton').addEventListener('click', async () => {
     const fileInput = document.getElementById('fileInput');
