@@ -1,22 +1,31 @@
-const fs = require('fs');
-
-// Read the contents of the .env file
-const envFile = fs.readFileSync('.env', 'utf8');
-
-// Parse the contents to extract the variable
-const matches = envFile.match(/GITHUB_TOKEN=(.*)/);
-
-// Check if the variable exists in the .env file
-if (matches && matches[1]) {
-    const token = matches[1];
-    console.log('GitHub Token:', token);
-
-    // Now you can use the token in your code
-    // For example:
-    // const github = new GitHub({ token });
-} else {
-    console.error('GitHub Token not found in .env file');
+function fetchEnvFile(callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                callback(null, xhr.responseText);
+            } else {
+                callback(new Error('Failed to fetch .env file'));
+            }
+        }
+    };
+    xhr.open('GET', '.env', true);
+    xhr.send();
 }
+
+// Usage example
+fetchEnvFile(function(error, envContents) {
+    if (error) {
+        console.error(error);
+        return;
+    }
+
+    // Extract the variable
+    const token = envContents.trim(); // Trim to remove leading/trailing whitespace
+
+    // Use the token in your code
+    console.log('GitHub Token:', token);
+});
 
 document.getElementById('uploadButton').addEventListener('click', async () => {
     const fileInput = document.getElementById('fileInput');
@@ -31,7 +40,7 @@ document.getElementById('uploadButton').addEventListener('click', async () => {
         const content = event.target.result.split(',')[1]; // Get the base64 content
         const filename = file.name;
 
-        const token = process.env.GITHUB_PAT; // Replace with your GitHub Personal Access Token
+        const token = envContents.trim(); // Replace with your GitHub Personal Access Token
         const repoOwner = 'Davselli'; // Replace with your GitHub username
         const repoName = 'pic_wedding'; // Replace with your repository name
         const branchName = 'main'; // Replace with the branch you want to upload to
