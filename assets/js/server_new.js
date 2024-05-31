@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 document.getElementById('uploadButton').addEventListener('click', async () => {
     const fileInput = document.getElementById('fileInput');
     if (fileInput.files.length === 0) {
@@ -11,7 +13,7 @@ document.getElementById('uploadButton').addEventListener('click', async () => {
         const content = event.target.result.split(',')[1]; // Get the base64 content
         const filename = file.name;
 
-        const token = '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'; // Replace with your GitHub Personal Access Token
+        const token = process.env.GITHUB_PAT; // Replace with your GitHub Personal Access Token
         const repoOwner = 'Davselli'; // Replace with your GitHub username
         const repoName = 'pic_wedding'; // Replace with your repository name
         const branchName = 'main'; // Replace with the branch you want to upload to
