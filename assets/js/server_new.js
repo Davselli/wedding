@@ -11,7 +11,7 @@ document.getElementById('uploadButton').addEventListener('click', async () => {
         const content = event.target.result.split(',')[1]; // Get the base64 content
         const filename = file.name;
 
-        const token = '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'; // Replace with your GitHub Personal Access Token
+        const token = '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'; // Replace with your GitHub Personal Access Token
         const repoOwner = 'Davselli'; // Replace with your GitHub username
         const repoName = 'pic_wedding'; // Replace with your repository name
         const branchName = 'main'; // Replace with the branch you want to upload to
