@@ -111,6 +111,60 @@
         </section>
         <!-- end of wpo-contact-section -->
         
+        <div class="ajax-inserted-content">
+            <section class="section gallery grid layout-4-col">
+                <div class="container">
+                    <div class="row" id='gallery-items'>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script>
+            function doPortItem(n) {
+                let fileTypes = ['jpg', 'mp4', 'mov']; // Array of file types to check
+                let basePath = './assets/images/wedding/'; // Adjusted base path for images and videos
+
+                fileTypes.forEach(type => {
+                    let fileName = basePath + n + '.' + type;
+
+                    if (type === 'jpg') {
+                        let img = document.createElement('img');
+                        img.src = fileName;
+                        img.addEventListener('load', () => {
+                            let div = `<div class="col-3 col-lg-4 col-md-6 col-sm-12">
+                                <div class="gallery-item">
+                                    <div class="gallery-img">
+                                        <img data-lazy-image data-src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzIDIiPjwvc3ZnPg==" src="${img.src}" alt="Demo img"> 
+                                    </div>
+                                </div>
+                            </div>`;
+                            document.querySelector('#gallery-items').innerHTML += div;
+                        });
+                    } else if (type === 'mp4' || type === 'mov') {
+                        let video = document.createElement('video');
+                        video.src = fileName;
+                        video.controls = true;
+                        video.addEventListener('loadeddata', () => {
+                            let div = `<div class="col-3 col-lg-4 col-md-6 col-sm-12">
+                                <div class="gallery-item">
+                                    <div class="gallery-video">
+                                        <video controls>
+                                            <source src="${video.src}" type="video/${type}">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>`;
+                            document.querySelector('#gallery-items').innerHTML += div;
+                        });
+                    }
+                });
+
+                // Recursively call doPortItem with incremented n value
+                doPortItem(++n);
+            }
+            doPortItem(1)
+        </script>
 
         <!-- start wpo-partners-section -->
         <section class="wpo-partners-section">
